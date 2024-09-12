@@ -1,3 +1,7 @@
+/*
+
+*/
+
 #include <stdio.h>
 
 int main(int argc, char const *argv[])
@@ -8,8 +12,8 @@ int main(int argc, char const *argv[])
     do{
         unsigned int cur = 0;
         scanf("%u", &cur);
-        res ^= cur;
-        n--;
+        res ^= cur; // пользуемся свойством x^x=0
+        n--;        //                    и x^0=x
     } while (n);
     printf("%u\n", res);
     return 0;
