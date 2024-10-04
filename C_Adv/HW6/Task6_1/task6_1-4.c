@@ -34,17 +34,16 @@ void print_list(struct list* head){
     putchar('\n');
 }
 
-void getOdd(struct list* head){
+void printOdd(struct list* head){
     int i = 0;
-    struct list *odd;
-    while(head != NULL){
+    struct list* e = head;
+    while(head != (struct list*)NULL){
         if((i % 2) == 0){
-            insert2(head->word, odd);
+            printf("%s ", e->word);
         }
-        head = head->next;
+        e = e->next;
         i++;
     }
-    print_list(odd);
 }
 
 void printFirst(struct list* head){
@@ -83,6 +82,6 @@ int main(int argc, char const *argv[])
     printFirst(w_list);
     printLast(w_list);
 
-    getOdd(w_list);
+    printOdd(w_list);
     return 0;
 }
